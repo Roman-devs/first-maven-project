@@ -7,13 +7,13 @@ public class CheckStringLengthApp {
         String exampleString = "fancyPantssssssssssssssssssssssssssss";
         // Results
         int result = sum(int1, int2);
-        String result2 = check100(int1, int2);
+        boolean result2 = check100(int1, int2);
         boolean result3 = fancy(exampleString);
         boolean result4 = lttwenty(exampleString);
         String resTest = String.valueOf(result4);
         // Print Results exercise 1
         System.out.println("Summe: "+result);
-        System.out.println(result2);
+        System.out.println("One of both values is greater than 100: " + result2);
         // Print Results exercise 2
         System.out.println("Example String: " + exampleString);
         System.out.println("Contains fancy: " + result3);
@@ -24,10 +24,9 @@ public class CheckStringLengthApp {
         return someValue + otherValue;
     }
 
-    public static String check100(int a, int b){
-        boolean checka = a > 100;
-        boolean checkb = b > 100;
-        return "a greater than hundred?" + " " + checka + "; b greater than hundred?" + " " + checkb;
+    public static boolean check100(int a, int b){
+        boolean checka = (a > 100) || (b > 100);
+        return checka;
     }
 
     public static boolean fancy (String example){
@@ -40,3 +39,4 @@ public class CheckStringLengthApp {
         return checkLength;
     }
 }
+
