@@ -4,12 +4,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CheckStringLengthTest {
     @Test
-    public void longerThanTwentyCharacters (){
+    public void additionoftwonumbers (){
         //Given
-        String testString = "asasasaasasasasasasasasasasasasasa";
+        int firstValue  = 5;
+        int secondValue = 5;
         //When
-        boolean result = CheckStringLengthApp.lttwenty(testString);
+        int result = CheckStringLengthApp.sum(firstValue, secondValue);
         //Then
-        assertEquals(true, result);
+        assertEquals(10, result);
+    }
+
+    @Test
+    public void greaterthanhundred(){
+        //Given
+        int firstValue = 67;
+        int secondValue = 101;
+        //When
+        boolean result = CheckStringLengthApp.check100(firstValue, secondValue);
+        //Then
+        assertEquals(true,result);
     }
 }
