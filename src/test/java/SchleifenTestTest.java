@@ -60,7 +60,7 @@ public class SchleifenTestTest {
         assertEquals("GTFO!", result);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "For {0} people and threat level {1} it returns {2}")
     @DisplayName("ParameterizedTest")
     @CsvSource({
             "31, red, GTFO!",
