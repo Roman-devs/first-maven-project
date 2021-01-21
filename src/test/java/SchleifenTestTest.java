@@ -1,5 +1,9 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,5 +58,19 @@ public class SchleifenTestTest {
         String colorStatus = "green";
         String result = SchleifenTest.alarmEvent(participants, colorStatus);
         assertEquals("GTFO!", result);
+    }
+
+    @ParameterizedTest
+    @DisplayName("ParameterizedTest")
+    @CsvSource({
+            "31, red, GTFO!",
+            "19, yellow, Looking good so far.",
+            "35, yellow, GTFO!",
+            "35, green, Looking good so far.",
+            "72, green, GTFO!"
+    })
+
+    void checkitout(int people, String color, String expected) {
+        assertEquals(expected, SchleifenTest.alarmEvent(people,color));
     }
 }
