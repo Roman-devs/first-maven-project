@@ -24,4 +24,20 @@ public class FacultyTest {
                 Arguments.of(3,6)
         );
     }
+
+    @ParameterizedTest
+    @MethodSource
+
+    public void FacultyTestFunctionWhile(int number, int expected){
+        int result = FacultyApp.FacultyTestWhile(number);
+        assertEquals(expected, result);
+    }
+    private static Stream<Arguments>FacultyTestFunctionWhile(){
+        return Stream.of(
+                Arguments.of(0,1),
+                Arguments.of(1,1),
+                Arguments.of(2,2),
+                Arguments.of(3,6)
+        );
+    }
 }

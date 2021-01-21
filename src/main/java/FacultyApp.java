@@ -9,5 +9,13 @@ public class FacultyApp {
         return result;
     }
 
-
+    public static int FacultyTestWhile(int number){
+        int result = 1;
+        int numberGiven = number;
+        while (numberGiven > 0) {
+            result = numberGiven * result;
+            numberGiven -= 1;
+        }
+        return result;
+    }
 }
